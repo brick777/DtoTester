@@ -21,25 +21,36 @@ public class MyDtoTest extends DtoTester<MyDto> {
 # Customization
 You can also customize test parameters like `ignoredFieldList` or `customTypeMap`.
 
+## Ignore list
 ```java
 public class MyDtoTest extends DtoTester<MyDto> {
 
 	public MyDtoTest() {
   
-		// IGNORED LIST
-    
 		final Set<String> ignoredFieldList = new HashSet<>();
 		ignoredFieldList.add("activeTypeEnum");
 		ignoredFieldList.add("isActive");
 		addIgnoredField(ignoredFieldList);
     
-		// OR
+		// or add as single variable name
+		// addIgnoredField("activeTypeEnum");
+		// addIgnoredField("isActive");
 
-		addIgnoredField("activeTypeEnum");
-		addIgnoredField("isActive");
-    
-		// ADD CUSTOM TYPE
+	}
 
+	@Override
+	public MyDto getDtoClassInstance() {
+		return new MyDto();
+	}
+}
+```
+
+## Add custom type
+```java
+public class MyDtoTest extends DtoTester<MyDto> {
+
+	public MyDtoTest() {
+  
 		final Map<Class<?>, Supplier<?>> customTypeMap = new HashMap<>();
 
 		customTypeMap.put(Method.class, () -> {
@@ -53,8 +64,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 
 		addCustomMapper(customTypeMap);
 
-		// OR
-
+		/* or add as single
 		addCustomMapper(Method.class, () -> {
 			try {
 				return MyDto.class.getMethod("getByteObject");
@@ -63,6 +73,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 				return null;
 			}
 		});
+		*/
 
 	}
 
