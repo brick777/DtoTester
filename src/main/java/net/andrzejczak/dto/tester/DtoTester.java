@@ -56,6 +56,10 @@ public abstract class DtoTester<T> {
 		mappers.putAll(DEFAULT_TYPE_MAPPERS);
 	}
 
+	/**
+	 * Add variable name which should be ignored
+	 * @param field
+	 */
 	public void addIgnoredField(final String field) {
 		if(this.ignoredFieldsSet==null){
 			ignoredFieldsSet = new HashSet<>();
@@ -63,18 +67,31 @@ public abstract class DtoTester<T> {
 		this.ignoredFieldsSet.add(field);
 	}
 
+	/**
+	 * Add variables names which should be ignored
+	 * @param ignoredFieldsSet
+	 */
 	public void addIgnoredField(final Set<String> ignoredFieldsSet) {
 		this.ignoredFieldsSet = ignoredFieldsSet;
 	}
 
+	/**
+	 * Add variable types map to test
+	 * @param customTypeMap
+	 */
 	public void addCustomMapper(final Map<Class<?>, Supplier<?>> customTypeMap) {
-		customTypeMap.forEach((aClass, supplier) -> {
-			mappers.putIfAbsent(aClass, supplier);
+		customTypeMap.forEach((cClass, cSupplier) -> {
+			mappers.putIfAbsent(cClass, cSupplier);
 		});
 	}
 
-	public void addCustomMapper(final Class<?> c, final Supplier<?> s) {
-		mappers.putIfAbsent(c, s);
+	/**
+	 * Add variable type to test
+	 * @param cClass
+	 * @param cSupplier
+	 */
+	public void addCustomMapper(final Class<?> cClass, final Supplier<?> cSupplier) {
+		mappers.putIfAbsent(cClass, cSupplier);
 	}
 
 	public abstract T getDtoClassInstance();
