@@ -21,7 +21,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 # Customization
 You can also customize test parameters such as `ignoredFieldList` or `customTypeMap`.
 
-## Ignore list
+## Ignore some variable
 ```java
 public class MyDtoTest extends DtoTester<MyDto> {
 
@@ -45,7 +45,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 }
 ```
 
-## Add custom type
+## Add custom variable type
 ```java
 public class MyDtoTest extends DtoTester<MyDto> {
 
