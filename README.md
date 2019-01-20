@@ -4,11 +4,11 @@ This package provides simple way to implement tests for all DTO classes in your 
 A Data Transfer Object (DTO) is an object used to pass typed data between layers in your application. By testing these classes, you can increase the coverage of your code.
 
 # How it works
-It use reflection to fetch DTO class fields. Then are testing only this methods which are occure in pairs.
+It use reflection to fetch DTO class fields. Then are testing only this methods which are occur in pairs.
 
 # How to 
 Assume that our DTO class name is MyDto.
-To run test for this class you have to create corresponding class in test pagckage.
+To run test for this class you have to create corresponding class in test package.
 ```java
 public class MyDtoTest extends DtoTester<MyDto> {
   @Override
@@ -19,7 +19,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 ```
 
 # Customization
-You can also customize test parameters like `ignoredFieldList` or `customTypeMap`.
+You can also customize test parameters such as `ignoredFieldList` or `customTypeMap`.
 
 ## Ignore list
 ```java
