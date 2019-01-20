@@ -26,19 +26,19 @@ public class MyDtoTest extends DtoTester<MyDto> {
 
 	public MyDtoTest() {
   
-    // IGNORED LIST
+		// IGNORED LIST
     
 		final Set<String> ignoredFieldList = new HashSet<>();
 		ignoredFieldList.add("activeTypeEnum");
-    ignoredFieldList.add("isActive");
+		ignoredFieldList.add("isActive");
 		addIgnoredField(ignoredFieldList);
     
-    // OR
+		// OR
 
 		addIgnoredField("activeTypeEnum");
-    addIgnoredField("isActive");
+		addIgnoredField("isActive");
     
-    // ADD CUSTOM TYPE
+		// ADD CUSTOM TYPE
 
 		final Map<Class<?>, Supplier<?>> customTypeMap = new HashMap<>();
 
@@ -53,7 +53,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 
 		addCustomMapper(customTypeMap);
 
-    // OR
+		// OR
 
 		addCustomMapper(Method.class, () -> {
 			try {
