@@ -1,7 +1,7 @@
 # DtoTester
 This package provides simple way to implement tests for all DTO classes in your projects.
 
-A Data Transfer Object (DTO) is an object used to pass typed data between layers in your application. By testing these classes, you can increase the coverage of your code in simple way.
+A Data Transfer Object (DTO) is an object used to pass typed data between layers in your application. By testing these classes, you can increase the code coverage in simple way.
 
 # How it works
 It use reflection to fetch DTO class variables and invoke getter/setter methods. Then are testing only this methods which are occur in pairs.
