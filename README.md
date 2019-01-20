@@ -32,9 +32,9 @@ public class MyDtoTest extends DtoTester<MyDto> {
 		ignoredFieldList.add("isActive");
 		addIgnoredField(ignoredFieldList);
     
-		// or add as single variable name
-		// addIgnoredField("activeTypeEnum");
-		// addIgnoredField("isActive");
+		// and/or
+		addIgnoredField("id");
+		addIgnoredField("isRed");
 
 	}
 
@@ -55,7 +55,7 @@ public class MyDtoTest extends DtoTester<MyDto> {
 
 		customTypeMap.put(Method.class, () -> {
 			try {
-				return MyDto.class.getMethod("getByteObject");
+				return MyDto.class.getMethod("getSomeObject");
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 				return null;
@@ -64,16 +64,15 @@ public class MyDtoTest extends DtoTester<MyDto> {
 
 		addCustomMapper(customTypeMap);
 
-		/* or add as single
+		// and/or 
 		addCustomMapper(Method.class, () -> {
 			try {
-				return MyDto.class.getMethod("getByteObject");
+				return MyDto.class.getMethod("getAnotherObject");
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 				return null;
 			}
 		});
-		*/
 
 	}
 
