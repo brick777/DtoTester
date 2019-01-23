@@ -11,7 +11,7 @@ Assume that our DTO class name is MyDto.
 To run test for this class you have to create corresponding class in test package.
 ```java
 public class MyDtoTest extends DtoTester<MyDto> {
-  @Override
+	@Override
 	public MyDto getDtoClassInstance() {
 		return new MyDto();
 	}
