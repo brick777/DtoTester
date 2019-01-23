@@ -6,7 +6,17 @@ A Data Transfer Object (DTO) is an object used to pass typed data between layers
 # How it works
 It use reflection to fetch DTO class variables and invoke getter/setter methods. Then are testing only this methods which are occur in pairs.
 
-# How to 
+# How to use
+If you want to use this library you can simple add it to your project by POM.xml:
+```
+<dependency>
+	<groupId>net.andrzejczak</groupId>
+	<artifactId>DtoTester</artifactId>
+	<version>1.0</version>
+	<scope>test</scope>
+</dependency>
+```
+
 Assume that our DTO class name is MyDto.
 To run test for this class you have to create corresponding class in test package.
 ```java
