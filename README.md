@@ -8,7 +8,7 @@ It use reflection to fetch DTO class variables and invoke getter/setter methods.
 
 # How to use
 If you want to use this library you can simple add it to your project by POM.xml:
-```
+```xml
 <dependency>
 	<groupId>net.andrzejczak</groupId>
 	<artifactId>DtoTester</artifactId>
